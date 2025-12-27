@@ -50,3 +50,28 @@ img {
   transform: rotate(-15deg);
   white-space: nowrap;
 }
+/* Swiper 基本設定 */
+.swiper {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
