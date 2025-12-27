@@ -11,11 +11,24 @@ if (pass !== "suzume") {
   throw new Error("blocked");
 }
 
+// ボタン
+document.getElementById("backBtn")?.addEventListener("click", () => {
+  location.href = "index.html";
+});
+
+document.getElementById("fsBtn")?.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+});
+
 // URL取得
 const params = new URLSearchParams(location.search);
 const articleId = params.get("id");
 
-// 透かし関数
+// 透かし
 function addWatermark(slide) {
   const wm = document.createElement("div");
   wm.className = "watermark";
@@ -53,6 +66,13 @@ fetch("articles.json")
       pagination.className = "swiper-pagination";
       swiper.appendChild(pagination);
 
+      const prev = document.createElement("div");
+      prev.className = "swiper-button-prev";
+      const next = document.createElement("div");
+      next.className = "swiper-button-next";
+      swiper.appendChild(prev);
+      swiper.appendChild(next);
+
       container.appendChild(swiper);
 
       for (let i = 1; i <= 20; i++) {
@@ -69,19 +89,13 @@ fetch("articles.json")
 
       setTimeout(() => {
         new Swiper(swiper, {
-          pagination: { el: pagination },
-          loop: false
+          loop: false,
+          pagination: { el: pagination, clickable: true },
+          navigation: {
+            nextEl: next,
+            prevEl: prev
+          }
         });
       }, 300);
     });
   });
-const prev = document.createElement("div");
-prev.className = "swiper-button-prev";
-const next = document.createElement("div");
-next.className = "swiper-button-next";
-swiper.appendChild(prev);
-swiper.appendChild(next);
-document.getElementById("backBtn")?.addEventListener("click", () => {
-  location.href = "index.html";
-});
-
