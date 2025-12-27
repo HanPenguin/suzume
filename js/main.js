@@ -75,3 +75,13 @@ fetch("articles.json")
       }, 300);
     });
   });
+const prev = document.createElement("div");
+prev.className = "swiper-button-prev";
+const next = document.createElement("div");
+next.className = "swiper-button-next";
+swiper.appendChild(prev);
+swiper.appendChild(next);
+document.getElementById("backBtn")?.addEventListener("click", () => {
+  location.href = "index.html";
+});
+
