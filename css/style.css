@@ -74,4 +74,18 @@ img {
   user-select: none;
   pointer-events: none;
 }
+button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  margin: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
 
