@@ -1,85 +1,25 @@
 body {
+  margin: 0;
   font-family: sans-serif;
-  margin: 20px;
-  -webkit-touch-callout: none;
+  background: #111;
+  color: #eee;
 }
 
-h1, h2 {
-  margin-bottom: 20px;
-}
-
-.category-title {
-  margin: 40px 0 10px;
-  padding-left: 10px;
-  border-left: 4px solid #666;
-  font-size: 1.3em;
-}
-
-.swiper {
-  max-width: 900px;
-  margin-bottom: 30px;
-}
-
-.swiper-slide {
-  position: relative;
-}
-
-img {
-  width: 100%;
-  user-select: none;
-  -webkit-user-drag: none;
-  pointer-events: none;
-}
-
-.watermark {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    -30deg,
-    rgba(0,0,0,0.08) 0,
-    rgba(0,0,0,0.08) 1px,
-    transparent 1px,
-    transparent 40px
-  );
+.top-bar {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 48px;
-  color: rgba(0,0,0,0.12);
-  transform: rotate(-15deg);
-  white-space: nowrap;
-}
-/* Swiper 基本設定 */
-.swiper {
-  width: 100%;
-  max-width: 900px;
-  margin: 20px auto;
-  overflow: hidden;
+  gap: 10px;
+  padding: 10px;
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.swiper-wrapper {
-  display: flex;
-}
-
-.swiper-slide {
-  flex-shrink: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.swiper-slide img {
-  max-width: 100%;
-  height: auto;
-  user-select: none;
-  pointer-events: none;
-}
 button {
   background: #222;
   color: #fff;
   border: none;
   padding: 8px 14px;
-  margin: 10px;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -88,4 +28,53 @@ button:hover {
   background: #444;
 }
 
+h2 {
+  text-align: center;
+  margin: 20px 0;
+}
 
+.category-title {
+  margin: 30px 10px 10px;
+}
+
+/* Swiper */
+.swiper {
+  width: 100%;
+  max-width: 900px;
+  margin: 10px auto 40px;
+  position: relative;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  width: 100%;
+  flex-shrink: 0;
+  text-align: center;
+  position: relative;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Swiper buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+}
+
+/* Watermark */
+.watermark {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.4;
+  font-size: 12px;
+  pointer-events: none;
+}
